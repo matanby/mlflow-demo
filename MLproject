@@ -1,0 +1,13 @@
+name: tutorial
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      dropout_rate: {type: float, default: 0.0}
+      batch_size: {type: int, default: 128}
+      epochs: {type: int, default: 5}
+      num_units: {type: int, default: 128}
+      lr: {type: float, default: 1e-3}
+    command: "python train_mlflow.py --dropout_rate {dropout_rate} --batch_size {batch_size} --epochs {epochs} --num_units {num_units} --lr {lr}"
